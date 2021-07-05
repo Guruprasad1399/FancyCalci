@@ -2,6 +2,18 @@
     padding: 0;
     margin: 0;
   }
+
+  .fa-instagram {
+    background: white;
+    color: red;
+    margin: 20px;
+  }
+
+  .fa-twitter {
+    background: white;
+    color: blue;
+    margin: 20px;
+  }
   
   #heading{
     color: red;

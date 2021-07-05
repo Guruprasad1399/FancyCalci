@@ -4,7 +4,7 @@ const buttons = document.querySelectorAll('button');
 const display = document.querySelector('.display');
 
 // add eventListener to each button
-buttons.forEach(function(button) {
+buttons.forEach(function (button) {
   button.addEventListener('click', calculate);
 });
 
@@ -22,19 +22,41 @@ function calculate(event) {
   } else if (clickedButtonValue === 'C') {
     // clear everything on display
     display.value = '';
-  } 
-  else if(clickedButtonValue==='x') {
-      let a=display.value/10;
-      display.value =parseInt(a);
   }
-  else if(clickedButtonValue==='square'){
-      display.value=display.value*display.value;
+  else if (clickedButtonValue === 'x') {
+    if (display.value !== '') {
+
+      let a = display.value;
+      // console.log(a);
+      let b = Array.from(a);
+      let c = [];
+      for (let i = 0; i < b.length - 1; i++) {
+        c.push(b[i]);
+      }
+      let d = c.join("");
+      display.value = d;
+    }
+    else {
+      alert('Dont do this');
+    }
   }
-  else if(clickedButtonValue==='cube'){
-      display.value=display.value*display.value*display.value;
+  else if (clickedButtonValue === 'square') {
+    display.value = display.value * display.value;
   }
-  else if(clickedButtonValue==='sqrt'){
-      display.value=Math.sqrt(display.value);
+  else if (clickedButtonValue === 'cube') {
+    display.value = display.value * display.value * display.value;
+  }
+  else if (clickedButtonValue === 'sqrt') {
+    display.value = Math.sqrt(display.value);
+  }
+  else if (clickedButtonValue === 'help') {
+    let a = prompt('What do you need help with?');
+    if (a !== '') {
+      alert('In this calculator you will be able to perform simple arithmetic calculations and this calculator is still under development');
+    }
+  }
+  else if (clickedButtonValue === 'test') {
+    alert(typeof (display.value));
   }
   else {
     // otherwise concatenate it to the display
